@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./App.css";
+import { UserContext } from "./context/UserContext";
 import MainPage from "./components/MainPage";
 import Footer from "./components/Footer";
 import LoginScreen from "./LoginScreen";
 
 function App() {
   const [user, setUser] = useState();
+  const userContext = useContext(UserContext);
 
   return (
     <div
