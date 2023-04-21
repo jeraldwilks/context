@@ -11,7 +11,13 @@ const Footer = ({ user, setUser }) => {
         alignItems: "center",
       }}
     >
-      Hello {user} <button>Logout</button>
+      {user == null ? (
+        <>Logged Out</>
+      ) : (
+        <>
+          Hello {user} <button onClick={() => setUser(null)}>Logout</button>
+        </>
+      )}
     </div>
   );
 };
