@@ -6,8 +6,10 @@ import Footer from "./components/Footer";
 import LoginScreen from "./LoginScreen";
 
 function App() {
-  const [user, setUser] = useState();
-  const userContext = useContext(UserContext);
+  const loggedInUser = useContext(UserContext);
+  // const { user, setUser } = loggedInUser;
+  const user = loggedInUser.user;
+  const setUser = loggedInUser.setUser;
 
   return (
     <div
@@ -26,13 +28,9 @@ function App() {
       }}
     >
       <div style={{ flexGrow: 1 }}>
-        {user == null ? (
-          <LoginScreen setUser={setUser} />
-        ) : (
-          <MainPage user={user} />
-        )}
+        {user == null ? <LoginScreen /> : <MainPage />}
       </div>
-      <Footer user={user} setUser={setUser} />
+      <Footer />
     </div>
   );
 }

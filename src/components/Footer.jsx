@@ -1,6 +1,10 @@
 import React from "react";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
-const Footer = ({ user, setUser }) => {
+const Footer = () => {
+  const { user, setUser } = useContext(UserContext);
+
   return (
     <div
       style={{

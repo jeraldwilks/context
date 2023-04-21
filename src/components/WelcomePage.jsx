@@ -1,7 +1,10 @@
 import React from "react";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
-const WelcomePage = ({ theUser }) => {
-  return <div>Welcome {theUser}</div>;
+const WelcomePage = () => {
+  const { user } = useContext(UserContext);
+  return <div>Welcome {user}</div>;
 };
 
 export default WelcomePage;

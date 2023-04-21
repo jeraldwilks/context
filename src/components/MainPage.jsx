@@ -1,10 +1,11 @@
 import React from "react";
 import WelcomePage from "./WelcomePage";
+import { UserContext } from "../context/UserContext";
 
-const MainPage = ({ user }) => {
+const MainPage = () => {
   return (
     <div>
-      <WelcomePage theUser={user} />
+      <WelcomePage />
       This is your main application. You're logged in if you can see it.
     </div>
   );

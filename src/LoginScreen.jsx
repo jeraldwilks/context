@@ -1,8 +1,11 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserContext } from "./context/UserContext";
 
-const LoginScreen = ({ setUser }) => {
+const LoginScreen = () => {
+  const { setUser } = useContext(UserContext);
   const [userName, setUserName] = useState("");
+
   function loginUser() {
     setUser(userName);
   }
