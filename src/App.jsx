@@ -2,9 +2,10 @@ import { useState } from "react";
 import "./App.css";
 import MainPage from "./components/MainPage";
 import Footer from "./components/Footer";
+import LoginScreen from "./LoginScreen";
 
 function App() {
-  const [user, setUser] = useState("Jerald");
+  const [user, setUser] = useState();
 
   return (
     <div
@@ -23,7 +24,11 @@ function App() {
       }}
     >
       <div style={{ flexGrow: 1 }}>
-        <MainPage user={user} />
+        {user == null ? (
+          <LoginScreen setUser={setUser} />
+        ) : (
+          <MainPage user={user} />
+        )}
       </div>
       <Footer user={user} setUser={setUser} />
     </div>
